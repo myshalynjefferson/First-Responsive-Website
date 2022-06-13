@@ -1,0 +1,116 @@
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    background-color: cornflowerblue;
+
+}
+
+section {
+    padding: 20px;
+    min-height: 100%;
+    text-align: center;
+    background-color: white;
+}
+
+h1 {
+
+    color: white;
+    font-size: 40px;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 28px;
+
+}
+
+p {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+}
+
+.barone, .bartwo, .barthree {
+    margin: 0 auto;
+    height: 30px;
+    width: 200px;
+}
+
+.barone{
+    background-color: cornflowerblue;
+}
+.bartwo{
+    background-color: darkorange;
+}
+.barthree{
+    background-color: darkcyan;
+}
+
+
+main {grid-area: main;}
+.one {grid-area: one;}
+.two {grid-area: two;}
+.three {grid-area: three;}
+
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repreat(4,1fr);
+    grid-template-areas: 
+        "main"
+        "three"
+        "two"
+        "one";
+}
+
+
+@media (min-width: 576px) {
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3,1fr);
+        grid-template-areas: 
+            "main main"
+            "one two"
+            "three .";
+    }
+
+    main {
+
+        background-color: darkcyan;
+
+    }
+
+    h2, p {
+        color: black;
+    }
+}
+
+@media (min-width: 992px) {
+    body {
+        background-color: black;
+    }
+    .container {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(2,1fr);
+        grid-template-areas: 
+            "main main main"
+            "one two three";
+    }
+
+    h1{
+        font-size: 60px;
+    }
+
+    h2, p {
+        color: white;
+    }
+
+    .one, .two, .three {
+        background-color: black;
+    }
+}
